@@ -13,19 +13,17 @@ function Login() {
   let [info, setinfo] = useState("");
   const [user_info, setuser_info] = useState("");
   const history = useHistory();
+
   function login() {
     setloading(true);
-    // console.log(setinfo)
     var payload = {
       email: document.getElementById("email").value,
       password: document.getElementById("password").value,
     };
     axios({
-      url: "https://lfs-backend.herokuapp.com/login",
+      url: "http://localhost:5000/login",
       method: "POST",
       data: payload
-      
-      // url: "http://localhost:5000/login"
     })
       .then((response) => {
         // console.log("Response is :",response)
@@ -82,6 +80,10 @@ function Login() {
           style={{ width: "500px", height: "500px" }}
           alt=""
         /> */}
+        <div style={{
+              height: "850px"
+            }}>
+  <img src="https://wallpapercave.com/wp/wp5006306.jpg" height="860px" width="1920px" alt="gvcjha"></img></div>
         <form className="Box-1 login">
           <h1>Log in</h1>
           <p style={{ color: "white" }}>{info}</p>

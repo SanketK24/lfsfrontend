@@ -37,16 +37,27 @@ function LostItem() {
       info.append("description", description);
       info.append("question", itemquestion);
       info.append("type", type);
-      itemimage.map((itemImage) => {
-        info.append("itemPictures", itemImage, itemImage.name);
+      // itemimage.map((itemImage) => {
+      //   info.append("itemPictures", itemImage, itemImage.name);
+      // });
+      // const json = {};
+      // info.forEach((value, key) => json[key] = value);
+      const data = {};
+
+      info.forEach((value, key) => {
+        data[key] = value;
       });
 
+      console.log(data); // { name: 'John', email: 'john@example.com' }
+
+      //console.log(info);
       axios({
-        url: "https://lfs-backend.herokuapp.com/postitem",
+        url: "http://localhost:5000/postitem",
         method: "POST",
-        data: info,
+        data: data,//JSON.stringify(json),
         headers: {
           Authorization: token ? `Bearer ${token}` : "",
+          'Content-Type': 'application/json',
         },
         onUploadProgress: (ProgressEvent) => {
           console.log(
@@ -54,6 +65,7 @@ function LostItem() {
               Math.round((ProgressEvent.loaded / ProgressEvent.total) * 100) +
               "%"
           );
+          
         },
         // url: "http://localhost:5000/login"
       })
@@ -69,13 +81,14 @@ function LostItem() {
           setdescription("");
           settype("");
           setitemquestion("");
-          setitemimage([]);
+          //setitemimage([]);
           // console.log("Executed");
           setloading(false);
           setShow(false);
         })
         .catch((err) => {
           setloading(false);
+          console.log(err.config);
           console.log(err);
           addToast("Oops 😞! Check internet connection or try again later.", {
             appearance: "error",
@@ -87,6 +100,9 @@ function LostItem() {
         appearance: "error",
       });
     }
+  };
+  const tempUI = () => {
+
   };
   const temporaryShut=()=>{
     addToast("New item listing has been disabled temporarily.", {
@@ -154,7 +170,7 @@ function LostItem() {
                 <option value={"Found"}>Found It</option>
               </Form.Control>
             </Form.Group>
-            <Form.Group>
+            {/* <Form.Group>
               <Form.File
                 type="file"
                 id="formimage"
@@ -169,7 +185,7 @@ function LostItem() {
                 }}
                 multiple
               />
-            </Form.Group>
+            </Form.Group> */}
           </Form>
         </Modal.Body>
         <Modal.Footer>
@@ -177,7 +193,7 @@ function LostItem() {
             Close
           </Button>
           {/* onClick={handleClose} */}
-          <Button variant="primary" onClick={temporaryShut}>
+          <Button variant="primary" onClick={handleClose}>
             {loading ? (
               <>
                 <Spinner

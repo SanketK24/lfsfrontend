@@ -11,11 +11,6 @@ import developer from "../img/developer_outline I.svg";
 import login from "../img/login-1.svg";
 import list_item from "../img/list-item.svg";
 import notification from "../img/notification.svg";
-import github from "../img/github.svg";
-import linkedin from "../img/linkedin.svg";
-import instagram from "../img/instagram.svg";
-import mail from "../img/mail.svg";
-import feature from "../img/feature.svg";
 
 // import image from "../img/earth.svg";
 import { Container, Row, Button, Form } from "react-bootstrap";
@@ -67,7 +62,7 @@ export default function Home() {
     };
     Axios({
       method: "POST",
-      url: "https://lfs-backend.herokuapp.com/sendmessage",
+      url: "https://localhost/5000/sendmessage",
       data: data,
     })
       .then((res) => {
@@ -87,7 +82,7 @@ export default function Home() {
         <div className="intro">
           <div className="part-1">
             <div className="title">
-              <h1 id="title-h">Lost and Found</h1>
+              <h1 id="title-h">Lost and Found-VIT</h1>
               <p>Lost it😕. List it📃. Find it🤩.</p>
               <Button
                 variant="custom"
@@ -111,7 +106,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="demo_video">
+        {/* <div className="demo_video" hidden="true">
           <h6 className="section-heading">Working Demo 🚀</h6>
           <iframe
             className="yt_video"
@@ -119,7 +114,7 @@ export default function Home() {
             height="400"
             src="https://www.youtube.com/embed/7pioxo5yjGI?controls=0"
           ></iframe>
-        </div>
+        </div> */}
 
         {/* <div className="post-item">
           <button class="button" onClick={postitem}>Post Item</button>
@@ -270,65 +265,6 @@ export default function Home() {
           </div>
         </Container>
       </div>
-
-      <div className="footer">
-        <div className="social-icon">
-          <a
-            href="https://github.com/eswarupkumar"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img src={github} className="icon github" alt="" />
-          </a>
-          <a
-            href="https://www.linkedin.com/in/e-swarup-kumar/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img src={linkedin} className="icon" alt="" />
-          </a>
-          {/* <a
-            href="https://www.instagram.com/_swarup._.kumar_/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img src={instagram} className="icon" alt="" />
-          </a> */}
-          <a
-            href="mailto:eswarupkumar1111@silicon.ac.in"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img src={mail} className="icon" alt="" />
-          </a>
-        </div>
-        <div className="personal-info">
-          <p>Created with ❤️ using MERN by </p>
-          <h4>
-            <span className="symbol">&#60;</span>E Swarup Kumar
-            <span className="symbol">/&#62;</span>
-          </h4>
-          <h6>Full Stack Developer</h6>
-          {/* <a
-            href="https://www.swarupwho.codes"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h6>swarupwho.codes</h6>
-          </a> */}
-        </div>
-        <h5 style={{ textAlign: "center" }}>
-          Copyright © 2022 E Swarup Kumar. All rights reserved.
-        </h5>
-      </div>
-      {/* <div className="About">
-        <div>
-          <h1>About the project</h1>
-          <p>
-            
-          </p>
-        </div>
-      </div> */}
     </>
   );
 }

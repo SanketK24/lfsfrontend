@@ -10,29 +10,12 @@ export default class Signup extends Component {
       info: "",
     };
   }
-  // state={
-  //     username:'',
-  //     pass:'',
-  //     cpass:''
-  // }
-  // handleChange=(event)=>{
-  //     const target= event.target
-  //     const name=event.name
-  //     const value=event.value
 
-  //     console.log("Event is :"+event)
-  //     console.log("Event.target = "+target+"Event.name = "+name+"Event.value =  "+value)
-
-  //     this.setState({
-  //         [name]:value
-  //     })
-  // }
   submit = () => {
     this.setState({
       info: "",
     });
-    // console.log("Inside Submit");
-    // console.log(this.state);
+
     const payload = {
       firstname: document.getElementById("firstname").value,
       lastname: document.getElementById("lastname").value,
@@ -43,7 +26,7 @@ export default class Signup extends Component {
     };
     // console.log(payload.username)
     axios({
-      url: "https://lfs-backend.herokuapp.com/signup",
+      url: "http://localhost:5000/signup",
       method: "POST",
       data: payload,
     })
@@ -52,37 +35,30 @@ export default class Signup extends Component {
         this.setState({
           info: response.data,
         });
-        // console.log("Data has been sent")
         if (response.data === "Done") {
           this.props.history.push("/log-in");
         }
-        // console.log(document.getElementById('password').value)
-        // console.log(document.getElementById('cpassword').value)
-        // if(document.getElementById('password').value==document.getElementById('cpassword').value){
-        //     console.log('Client : Password did matched')
-        //     // this.props.history.push('/log-in')
-        // }
-        // else{
-        //     document.getElementById('message').innerHTML='pass did not match'
-        //     console.log('Client : Password did not matched')
-        // }
-        // return <Redirect to='/log-in'/>
+
       })
       .catch(() => {
         console.log("Error occured");
       });
   };
   render() {
-    // console.log("State is :"+ this.state)
+
     return (
       <>
         <Navbar />
-
-        <div>
-          <form className="Box-1">
-            <h1 className="name">Sign up</h1>
-            <p style={{ color: "white" }}>{this.state.info}</p>
-            <div className="row1">
+        <div id="background" height = "800px" background-image = "url('https://tse1.mm.bing.net/th?id=OIP.byOdnmXVFl44HHJpx7S6eAHaEo&pid=Api&P=0')">
+          <div id = "full-screen" height = "800px" background-image = "url('https://tse1.mm.bing.net/th?id=OIP.byOdnmXVFl44HHJpx7S6eAHaEo&pid=Api&P=0')">
+            <div style={{
+              height: "850px"
+            }}>
+  <img src="https://wallpapercave.com/wp/wp5006306.jpg" height="868px" width="1920px" alt="gvcjha"></img></div>
+              <form className="Box-1">
+              <h1 className="name">Sign up</h1>
+              <p style={{ color: "white" }}>{this.state.info}</p>
+              <div className="row1">
               <input
                 type="text"
                 id="firstname"
@@ -155,82 +131,9 @@ export default class Signup extends Component {
               </a>
             </p>
           </form>
+          </div>
         </div>
-        {/* <div className='Box-1'>
-        <form>
-          <h3>Sign Up</h3>
-          <p style={{color:'white'}}>{this.state.info}</p>
-          <div className="row1">
-          <div className="form-group">
-            <label>First name</label>
-            <input
-              type="text"
-              id="firstname"
-              className="form-control"
-              placeholder="First name"
-              required 
-              onChange={(e)=>{this.setState({firstname:e.target.value})}}
-            />
-          </div>
 
-          <div style={{marginLeft:"2%"}} className="form-group">
-            <label>Last name</label>
-            <input
-              id="lastname"
-              type="text"
-              className="form-control"
-              placeholder="Last name"
-              required 
-              onChange={(e)=>{this.setState({lastname:e.target.value})}}
-            />
-          </div>
-          </div>
-
-          <div className="form-group">
-            <label>Email address</label>
-            <input
-                id="email"
-              type="email"
-              className="form-control"
-              placeholder="Enter email"
-              required 
-              onChange={(e)=>{this.setState({email:e.target.value})}}
-            />
-          </div>
-
-          <div className="row1">
-          <div className="form-group">
-            <label>Password</label>
-            <input
-              id="password"
-              type="password"
-              className="form-control"
-              placeholder="Enter password"
-              required 
-              onChange={(e)=>{this.setState({password:e.target.value})}}
-            />
-          </div>
-          <div style={{marginLeft:"2%"}} className="form-group">
-            <label>Confirm Password</label>
-            <input
-              id="cpassword"
-              type="password"
-              className="form-control"
-              placeholder="Confirm password"
-              required 
-              onChange={(e)=>{this.setState({cpassword:e.target.value})}}
-            />
-          </div>
-          </div>
-
-          <button onClick={this.submit} type="submit" className="btn btn-primary btn-block">
-            Sign Up
-          </button>
-          <p className="forgot-password text-right">
-            Already registered <a href='/log-in'>login in?</a>
-          </p>
-        </form>
-        </div> */}
       </>
     );
   }

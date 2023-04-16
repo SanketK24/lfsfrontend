@@ -65,7 +65,7 @@ function ItemPage(props) {
     // console.log("dd")
     Axios({
       method:"POST",
-      url:`https://lfs-backend.herokuapp.com/activateItem/${item_id}`
+      url:`https://localhost:5000/activateItem/${item_id}`
     })
     .then((res)=>{
       console.log("Activated")
@@ -112,7 +112,7 @@ function ItemPage(props) {
   useEffect(() => {
     const { location } = props;
     Axios({
-      url: `https://lfs-backend.herokuapp.com/item/${
+      url: `http://localhost:5000/item/${
         item_id
       }`,
       method: "GET",
@@ -141,10 +141,10 @@ function ItemPage(props) {
         setitemquestion(data.question);
         settype(data.type);
         setCreatedby(data.createdBy);
-        setitemimage([]);
-        data.itemPictures.map((img) => {
-          setitemimage((itemImg) => [...itemImg, img]);
-        });
+        //setitemimage([]);
+        // data.itemPictures.map((img) => {
+        //   setitemimage((itemImg) => [...itemImg, img]);
+        // });
         console.log(itemimage);
         // console.log(itemquestion)
         let created_date = new Date(data.createdAt);
@@ -328,7 +328,7 @@ function ItemPage(props) {
   const submitResponse = () => {
     // console.log(e.target.value)
     Axios({
-      url: `https://lfs-backend.herokuapp.com/confirmResponse/${messageId}`,
+      url: `http://localhost:5000/confirmResponse/${messageId}`,
       method: "POST",
       data: { response: response },
     })
@@ -349,7 +349,7 @@ function ItemPage(props) {
   const delete_item = () => {
     console.log("deleted");
     Axios({
-      url: "https://lfs-backend.herokuapp.com/deleteitem",
+      url: "http://localhost:5000/deleteitem",
       method: "POST",
       data: { item_id },
     })
@@ -388,7 +388,7 @@ function ItemPage(props) {
       });
     }
     Axios({
-      url: "https://lfs-backend.herokuapp.com/edititem",
+      url: "http://localhost:5000/edititem",
       method: "POST",
       data: info,
     })
@@ -430,7 +430,7 @@ function ItemPage(props) {
   };
   const submitAnswer = () => {
     Axios({
-      url: "https://lfs-backend.herokuapp.com/submitAnswer",
+      url: "http://localhost:5000/submitAnswer",
       method: "POST",
       data: {
         itemId: item_id,
@@ -476,7 +476,7 @@ function ItemPage(props) {
       <Navbar />
       <Container fluid>
         <div className="itempage">
-          <Carousel autoPlay className="carousel" infiniteLoop width="50%">
+          {/* <Carousel autoPlay className="carousel" infiniteLoop width="50%">
             {itemimage.map((i) => {
               return (
                 <div style={{ border: "2px solid black" }}>
@@ -487,7 +487,7 @@ function ItemPage(props) {
                 </div>
               );
             })}
-          </Carousel>
+          </Carousel> */}
           <div>{Itemname}</div>
         </div>
         <div>{authenticationPage}</div>

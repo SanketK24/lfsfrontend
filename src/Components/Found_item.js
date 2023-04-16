@@ -19,7 +19,7 @@ function Found_item() {
     const payload = {
       name: itemname,
       description: description,
-      itemPictures: itemimage,
+      //itemPictures: itemimage,
     };
     // console.log(payload);
     axios({
@@ -78,14 +78,14 @@ function Found_item() {
                 onChange={(e) => setdescription(e.target.value)}
               />
             </Form.Group>
-            <Form.Group>
+            {/* <Form.Group>
               <Form.File
                 type="file"
                 id="formimage"
                 label="Image input"
                 onChange={(e) => setitemimage(e.target.files[0])}
               />
-            </Form.Group>
+            </Form.Group> */}
           </Form>
         </Modal.Body>
         <Modal.Footer>

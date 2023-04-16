@@ -24,14 +24,23 @@
 } */
 
 .title {
+  display: inline;
   position: absolute;
   top: 50%;
   transform: translate(8%, -50%);
 }
 
 .title > h1 {
+  display: inherit;
   font-size: 60px;
   font-weight: 600;
+  font-family: "Staatliches", cursive;
+}
+
+.title> h2 {
+  display: inherit;
+  font-size: 26px;
+  font-weight: 400;
   font-family: "Staatliches", cursive;
 }
 

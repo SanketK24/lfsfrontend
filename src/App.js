@@ -18,26 +18,25 @@ window.OneSignal = window.OneSignal || [];
 const OneSignal = window.OneSignal;
 function App()
 {
-  useEffect(()=>{
-    OneSignal.push(()=> {
-      OneSignal.init(
-        {
-          appId: "fe13c665-7830-497e-9a3f-27a523840baf", //STEP 9
+  // useEffect(()=>{
+  //   OneSignal.push(()=> {
+  //     OneSignal.init(
+  //       {
+  //         appId: "fe13c665-7830-497e-9a3f-27a523840baf", //STEP 9
       
-        welcomeNotification: {
-          "title": "One Signal",
-          "message": "Thanks for subscribing!",
-        } 
-      },
-        //Automatically subscribe to the new_app_version tag
-        // OneSignal.sendTag("new_app_version", "new_app_version", tagsSent => {
-        //   // Callback called when tag has finished sending
-        //   console.log('new_app_version TAG SENT', tagsSent);
-        // })
-      );
-    });
-  },[])
-  // const name='Swarup K'
+  //       welcomeNotification: {
+  //         "title": "One Signal",
+  //         "message": "Thanks for subscribing!",
+  //       } 
+  //     },
+  //       //Automatically subscribe to the new_app_version tag
+  //       // OneSignal.sendTag("new_app_version", "new_app_version", tagsSent => {
+  //       //   // Callback called when tag has finished sending
+  //       //   console.log('new_app_version TAG SENT', tagsSent);
+  //       // })
+  //     );
+  //   });
+  // },[])
   return (
     <>
     <Router>

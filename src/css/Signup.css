@@ -1,10 +1,13 @@
-body{
-    /* margin: 0; */
-    /* padding: 0; */
-    /* font-family: sans-serif; */
-    /* background: #355C7D; */
-    /* background-image:  url(img/background.jpg); */
+#background{
+  height: 1000px;
 }
+#full-screen {
+  background-image: url('https: //in.images.search.yahoo.com/images/view;_ylt=AwrKDyMklTFk5zkYwDa9HAx.;_ylu=c2VjA3NyBHNsawNpbWcEb2lkAzU5NmExMjY1YWRkYmJjNjQ3M2RmYzg2Y2I1MmNmMGM1BGdwb3MDNzYEaXQDYmluZw--?back=https%3A%2F%2Fin.images.search.yahoo.com%2Fsearch%2Fimages%3Fp%3Dlost%2Band%2Bfound%2Bbackground%2Bminimalist%26ei%3DUTF-8%26type%3DE211IN826G0%26fr%3Dmcafee%26fr2%3Dsa-gp-search%26nost%3D1%26tab%3Dorganic%26ri%3D76&w=2560&h=1600&imgurl=wallup.net%2Fwp-content%2Fuploads%2F2014%2F08%2Fminimalistic-ufo-takes-cow.jpg&rurl=https%3A%2F%2Fwallup.net%2Fminimalistic-ufo-takes-cow%2F&size=55.6KB&p=lost+and+found+background+minimalist&oid=596a1265addbbc6473dfc86cb52cf0c5&fr2=sa-gp-search&fr=mcafee&tt=Minimalistic+Ufo+Takes+Cow+Wallpapers+HD+%2F+Desktop+and+Mobile+Backgrounds&b=61&ni=140&no=76&ts=&tab=organic&sigr=6bXct3ERZW_.&sigb=akQAKZt0yaAm&sigi=iw8XJ9bTy5Ra&sigt=vVDnT0gcKBvm&.crumb=a5jE6Wp/iKK&fr=mcafee&fr2=sa-gp-search&type=E211IN826G0');
+  background-size: cover;
+  background-position: center center;
+  height: 100vh;
+}
+
 .Box-1{
     width: 400px;
     padding: 20px;
@@ -16,7 +19,9 @@ body{
     text-align: center;
     opacity: 0.6;
     border-radius: 3%;
+
 }
+
 /*.Box-1 h1{
     color: white;
     text-transform: uppercase;

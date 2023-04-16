@@ -63,7 +63,7 @@ export default function Feed() {
   useEffect(() => {
     // console.log("Test");
     Axios({
-      url: `https://lfs-backend.herokuapp.com/mylistings/${JSON.parse(localStorage.getItem("user"))._id}`,
+      url: `http://localhost:5000/mylistings/${JSON.parse(localStorage.getItem("user"))._id}`,
       method: "GET",
     })
       .then((response) => {
@@ -99,10 +99,10 @@ export default function Feed() {
                 {/* <li key={item.name}>{item.name}</li>
                 <li key={item.description}>{item.description}</li> */}
                 <Card bsPrefix="item-card" style={{maxHeight:"465px"}} >
-                  <Card.Img
+                  {/* <Card.Img
                     variant="top"
                     src={`https://lost-and-found-system.s3.amazonaws.com/${item.itemPictures[0].img}`}
-                  />
+                  /> */}
                   <Card.Body bsPrefix="card-body" >
                   {item.status ? (
                       <>
