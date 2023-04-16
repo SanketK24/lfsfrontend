@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/static/css/main.d6334b62.css",
+    "main.js": "/static/js/main.86583cec.js",
+    "static/media/Santorini.jpg": "/static/media/Santorini.c8b162e64046d51f596b.jpg",
+    "static/media/login-1.svg": "/static/media/login-1.ee4cf843da248eb3f09f5c5ad99ea948.svg",
+    "static/media/lost-2.svg": "/static/media/lost-2.f5381ad734dcc54f0b15f30cffc7868e.svg",
+    "static/media/developer_outline I.svg": "/static/media/developer_outline I.bb63ce7e0b3feba8ebc7c7f00dd7ffc6.svg",
+    "static/media/list-item.svg": "/static/media/list-item.dea87b5b73e0d92d7484e65fc1bbe5ea.svg",
+    "static/media/notification.svg": "/static/media/notification.a56d4eccbbf1f666d955a5ed6d981355.svg",
+    "index.html": "/index.html",
+    "main.d6334b62.css.map": "/static/css/main.d6334b62.css.map",
+    "main.86583cec.js.map": "/static/js/main.86583cec.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d6334b62.css",
+    "static/js/main.86583cec.js"
+  ]
+}
